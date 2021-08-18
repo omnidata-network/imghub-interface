@@ -27,26 +27,33 @@
     <title>Img8 Preview</title>
   </head>
   <body>
-    <script>
-      (function(d, s) {
-        var js = d.createElement(s),
-          sc = d.getElementsByTagName(s)[0];
-        js.src="https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
-        sc.parentNode.insertBefore(js, sc); }(document, "script"));
-      
-      var unlockProtocolConfig = {
-        "network": "4", // Network ID (1 is for mainnet, 4 for rinkeby, 100 for xDai, etc)  
-        "locks": {
-          "0x61fa7fC0c404D47001316B2120608d75D692A51f": {
-            "name": "img8"
-          }
-        },
-        "icon": "https://unlock-protocol.com/static/images/svg/unlock-word-mark.svg",
-        "callToAction": {
-          "default": "Please unlock these certificate templates!"
+  <script>
+    (function(d, s) {
+      var js = d.createElement(s),
+        sc = d.getElementsByTagName(s)[0];
+      js.src="https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
+      sc.parentNode.insertBefore(js, sc); }(document, "script"));
+    
+    var unlockProtocolConfig = {
+      "network": "4", // Network ID (1 is for mainnet, 4 for rinkeby, 100 for xDai, etc)  
+      "locks": {
+        "0x61fa7fC0c404D47001316B2120608d75D692A51f": {
+          "name": "img8",
+          "network": 4,
         }
-      }
-      </script>
+      },
+      "icon": "https://unlock-protocol.com/static/images/svg/unlock-word-mark.svg",
+      "callToAction": {
+        "default": "This product is locked. Pay with cryptocurrency to unlock it!",
+        "expired": "Your key is expiered now",
+        "pending": "Transaction in progress!",
+        "confirmed": "This is the message shown when the user has a confirmed key",
+        "noWallet": "Your wallet is currently not connected",
+      },
+      referrer: "0xreferrer", // Address of the referrer who will earn UDT governance tokens if the transaction is eligible.
+    }
+    </script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
