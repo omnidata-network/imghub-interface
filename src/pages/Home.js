@@ -4,9 +4,7 @@ import {
   Image,
   FormControl,
   FormLabel,
-  Flex,
   Box,
-  Button,
   Input,
   NumberInput,
   NumberInputField,
@@ -17,24 +15,11 @@ import {
 
 
 const Home = () => {
-  const [showUnlockBtn, setShowUnlockBtn] = useState(true);
   const [imgUrl, setImgUrl] = useState('');
 
   const [cid, setCid] = useState('bafybeigvwlkiqdvfpg3lcjmokhh6hn5dnugmcmhztbbspu74ufo64o56di');
   const [w, setW] = useState();
   const [h, setH] = useState();
-
-  useEffect(() => {
-    window.addEventListener('unlockProtocol.status', function(event) {
-      if(event.detail && event.detail.state === 'unlocked') {
-        setShowUnlockBtn(false);
-      }
-    })
-
-    return () => {
-      window.removeEventListener('unlockProtocol.status', function() {})
-    }
-  }, [])
 
   useEffect(() => {
     const url = new URL(`http://localhost:3000/ipfs/${cid}`);
@@ -53,10 +38,6 @@ const Home = () => {
     }
   }, [cid, w, h])
 
-  const unlock = () => {
-    window.unlockProtocol && window.unlockProtocol.loadCheckoutModal();
-  }
-
   return (
     <>
       <Container maxW="xl" centerContent my="10">
@@ -68,11 +49,11 @@ const Home = () => {
 
         <FormControl mt="5">
           <FormLabel>IPFS CID:</FormLabel>
-          <Input value={cid} onChange={(event) => setCid(event.target.value)} isDisabled={showUnlockBtn} />
+          <Input value={cid} onChange={(event) => setCid(event.target.value)} />
         </FormControl>
         <FormControl mt="2">
           <FormLabel>Image Width:</FormLabel>
-          <NumberInput isDisabled={showUnlockBtn}>
+          <NumberInput>
             <NumberInputField value={w} onBlur={(event) => setW(event.target.value)} />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -82,7 +63,7 @@ const Home = () => {
         </FormControl>
         <FormControl mt="2">
           <FormLabel>Image Height:</FormLabel>
-          <NumberInput isDisabled={showUnlockBtn}>
+          <NumberInput>
             <NumberInputField value={h} onBlur={(event) => setH(event.target.value)} />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -90,14 +71,6 @@ const Home = () => {
             </NumberInputStepper>
           </NumberInput>
         </FormControl>
-
-        {
-          showUnlockBtn ? (
-            <Button mt="5" colorScheme="teal" onClick={unlock} size="lg">
-              Unlock Img8
-            </Button>
-          ) : ''
-        }
       </Container>
     </>
   )
