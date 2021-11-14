@@ -10,18 +10,18 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
         <Flex
             align="center"
             justify={{ base: "center", md: "space-between" }}
-            direction={["row", "column-reverse", "column-reverse", "row"]}
+            direction={["column-reverse", "column-reverse", "column-reverse", "row"]}
             wrap="no-wrap"
             maxW="1600"
             px={["10", "10", "20", "20"]}
-            my="160"
+            m="0 auto"
             color={["white", "white", "primary.700", "primary.700"]}
             bgImage={BgAnimation}
             bgSize="cover"
             bgPosition="center"           
         >
             <Stack
-                spacing={4} w={["100%", "100%", "80%", "50%"]}
+                spacing={4} w={["100%", "100%", "80%", "50%"]} py="150"
             >
                 <Heading
                     as="h1"
@@ -58,7 +58,7 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                    <Link to={ctaLink}> {ctaText}</Link>
                 </Box>
             </Stack>
-            <Box w={["100%", "100%", "80%", "50%"]} mb={{ base: "50", md: "55" }}>
+            <Box w={["100%", "100%", "80%", "50%"]} mb="0" mt={["150", "150", "150", "0"]}>
                 <Center>
                     <Image src={image} size="100%" rounded="1rem" />
                 </Center>

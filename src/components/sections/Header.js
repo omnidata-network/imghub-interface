@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
-import { Box, Flex, Text } from "@chakra-ui/react"
-import Logo from "../ui/Logo"
+import { Box, Flex, Text, Stack, SimpleGrid, Heading, Image, HStack } from "@chakra-ui/react"
+import LogoImgLight from "../../assets/logo-light.png"
+import LogoImgDark from "../../assets/logo-dark.png"
 import { debounce } from "../../utils/helpers";
 
 
@@ -68,47 +69,50 @@ const Header = (props) => {
 
 
   return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      w="100%"
-      maxW="1600"
-      mb={0}
-      p={4}
-      px={["10", "10", "20", "20"]}
-      boxShadow="lg"
-      color={visible ? "white" : "gray.800"}
+    <Box as="nav" color={visible ? "white" : "gray.800"}
       bgGradient={visible ? "linear(to-r, blue.100, blue.500)" : "linear(to-r, white, white)"}
-      position="fixed"
-      top="0"
       transition="0.3s"
       zIndex="999"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      margin="0 auto"
     >
-      <Box>
-        <Logo w="100px" color={["white", "white", "primary.500", "primary.500"]} />
-      </Box>
-      <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
-        {show ? <CloseIcon /> : <MenuIcon />}
-      </Box>
-      <Box
-        display={{ base: show ? "block" : "none", md: "block" }}
-        flexBasis={{ base: "100%", md: "auto" }}
+      <Flex
+        align="center"
+        justify="space-between"
+        wrap="wrap"
+        w="100%"
+        maxW="1600"
+        mb={0}
+        p={4}
+        px={["10", "10", "20", "20"]}
+        margin="0 auto"
       >
-        <Flex
-          align="center"
-          justify={["center", "flex-end", "flex-end"]}
-          direction={["column", "row", "row", "row"]}
-          pt={[4, 4, 0, 0]}
+        <Box>
+          <Image src={visible ? LogoImgLight : LogoImgDark} maxH="40px" />
+        </Box>
+        <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
+          {show ? <CloseIcon /> : <MenuIcon />}
+        </Box>
+        <Box
+          display={{ base: show ? "block" : "none", md: "block" }}
+          flexBasis={{ base: "100%", md: "auto" }}
         >
-          <MenuItem fontWeight="bold" to="/">Home</MenuItem>
-          <MenuItem fontWeight="bold" to="/preview">Preview </MenuItem>
-          <MenuItem fontWeight="bold" to="/preview">Features </MenuItem>
-          <MenuItem fontWeight="bold" to="/preview">About Us </MenuItem>
-        </Flex>
-      </Box>
-    </Flex>
+          <Flex
+            align="center"
+            justify={["center", "flex-end", "flex-end"]}
+            direction={["column", "row", "row", "row"]}
+            pt={[4, 4, 0, 0]}
+          >
+            <MenuItem fontWeight="bold" to="/">Home</MenuItem>
+            <MenuItem fontWeight="bold" to="/preview">Preview </MenuItem>
+            <MenuItem fontWeight="bold" onClick={()=>window.location.href="https://docs.img8.io"}>Docs </MenuItem>
+          </Flex>
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 

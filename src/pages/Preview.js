@@ -24,6 +24,7 @@ import Header from '../components/sections/Header';
 import Footer from '../components/sections/Footer';
 import Edit from '../components/sections/Edit'
 import RetrieveBackgroundImg from '../assets/bg-line.svg'
+import FileSaver from "file-saver"
 
 
 
@@ -56,7 +57,9 @@ const Preview = () => {
     }
   }, [cid, w, h])
 
-
+  const saveImage = () => {
+    FileSaver.saveAs(
+    process.env.PUBLIC_URL + imgUrl,"Image")}
 
   return (
     <>
@@ -64,25 +67,15 @@ const Preview = () => {
       <Header />
       </Flex>
       <Edit />
-      {/* <Box maxW="1600" pt="50" px={["10", "10", "20", "20"]} textAlign="center">
-        <Heading
-          as="h1"
-          fontSize="3xl"
-          fontWeight="bold"
-          lineHeight="2"
-        >
-          Retrieve Your Image
-        </Heading>
-      </Box> */}
-      <SimpleGrid
+     <Box bgImage={RetrieveBackgroundImg} bgSize="cover">
+     <SimpleGrid
         columns={{ sm: 1, md: 2 }}
         spacing="8"
         pt="50"
         textAlign="left"
         p={["10", "10", "20", "20"]}
         maxW="1600"
-        m="0 auto"
-        bgImage={RetrieveBackgroundImg}
+        m="0 auto"        
       >
         <Box color="white">
           <Heading
@@ -131,22 +124,13 @@ const Preview = () => {
                 _hover={{
                   bg: "transparent", borderColor: "blue.500", color: "blue.500"
                 }}
-                _active={{ bg: "transparent", color: "white" }} _focus={{boxShadow:"lg"}} onClick={copy}>Copy</Button>
+                _active={{ bg: "transparent", color: "white" }} _focus={{boxShadow:"lg"}} onClick={copy}>Copy ink</Button>
+                 <Button borderRadius="30" p="6" w="50%" boxShadow="lg"  borderColor="white" color="white"
+                _hover={{
+                  bg: "transparent", borderColor: "blue.500", color: "blue.500"
+                }}
+                _active={{ bg: "transparent", color: "white" }} _focus={{boxShadow:"lg"}} onClick={saveImage}>Save Image</Button>
             </ButtonGroup>
-            {/* <Box
-                    as="button"
-                    p="4"                    
-                    mt="30"
-                    w="500"
-                    color="white"
-                    fontWeight="bold"
-                    borderRadius="md"
-                    bgGradient="linear(to-l, red.500, yellow.500)"
-                    _hover={{
-                        bgGradient: "linear(to-r, red.500, yellow.500)",
-                    }}
-                    onClick={copy}>Copy
-                </Box> */}
           </FormControl>
         </Box>
         <Box display="flex" justify="center" boxShadow="md" p="5" rounded="md" bg="white" w={`100%`} maxW="500" m="0 auto">
@@ -157,6 +141,7 @@ const Preview = () => {
           </Center>
         </Box>
       </SimpleGrid>
+     </Box>
       <Footer />
     </>
   )
