@@ -5,10 +5,11 @@ import App from './App';
 import { ChakraProvider } from '@chakra-ui/react';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import customTheme from '../src/utils/theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme}>
       <BrowserRouter forceRefresh={false}>
         <App />
       </BrowserRouter>

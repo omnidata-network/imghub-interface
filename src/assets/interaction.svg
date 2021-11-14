@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>kubernetes</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="kubernetes">
+            <rect id="Rectangle-9" fill="#E2E8F0" fill-rule="nonzero" x="0" y="0" width="40" height="40" rx="4"></rect>
+            <g id="cloud-monitor-exchange" stroke-linecap="round" stroke-linejoin="round" transform="translate(8.000000, 8.000000)" stroke="#0069FF" stroke-width="1.5">
+                <rect id="Rectangle" x="11.251" y="12.751" width="12" height="7.5" rx="1.5"></rect>
+                <line x1="17.251" y1="20.251" x2="17.251" y2="23.251" id="Path"></line>
+                <line x1="15.001" y1="23.251" x2="19.501" y2="23.251" id="Path"></line>
+                <polyline id="Path" points="0.751 15.001 3.001 12.751 5.251 15.001"></polyline>
+                <polyline id="Path" points="6.751 18.001 9.001 20.251 6.751 22.501"></polyline>
+                <path d="M12,3.751 C11.1128741,3.75350209 10.273019,4.15125103 9.709,4.836 C9.47884145,2.42170979 7.37268741,0.626751688 4.95244142,0.78224932 C2.53219543,0.937746951 0.673057103,2.98746989 0.753745509,5.41136336 C0.834433915,7.83525683 2.82577084,9.75680222 5.251,9.75101311 L12,9.75101311 C13.6568542,9.75101311 15,8.40785425 15,6.751 C15,5.09414575 13.6568542,3.751 12,3.751 Z" id="Path"></path>
+                <path d="M3,12.751 L3,17.251 C3,18.9078542 4.34314575,20.251 6,20.251 L9,20.251" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
