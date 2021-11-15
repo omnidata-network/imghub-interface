@@ -5,7 +5,7 @@ import Crop from "../../assets/crop.webp"
 import Adjust from "../../assets/adjust.webp"
 import Save from "../../assets/save.webp"
 
-const Edit = () => {
+const Steps = () => {
     return (
         <Flex bg="gray.50">
             <Box color="black" textAlign="center" pt="170" pb="50"
@@ -26,7 +26,7 @@ const Edit = () => {
                     There are only 4 simple steps.
                 </Text>
                 <SimpleGrid
-                    columns={{ sm: 2, md: 4 }}
+                    columns={{ sm: 1, md: 2, lg: 4 }}
                     spacing="8"
                     py="50"
                     textAlign="center"
@@ -60,4 +60,4 @@ const Edit = () => {
     )
 }
 
-export default Edit
+export default Steps

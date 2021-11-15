@@ -11,7 +11,7 @@ import Faster from "../../assets/faster.svg"
 
 const WhyChoose = () => {
     return (
-        <Flex bg="gray.50">
+        <Flex bg="gray.50" px={["10", "10", "20", "20"]}>
             <Box color="black" textAlign="center" maxW="1600" pt="50" bg="gray.50" m="0 auto">
                 <Heading
                     as="h1"
@@ -23,7 +23,7 @@ const WhyChoose = () => {
                 </Heading>
 
                 <SimpleGrid
-                    columns={{ sm: 2, md: 4 }}
+                    columns={{ sm: 1, md: 2, lg: 4 }}
                     spacing="8"
                     p="10"
                     mt="50"

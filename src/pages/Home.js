@@ -5,13 +5,11 @@ import Header from "../components/sections/Header";
 import Partners from '../components/sections/Partners';
 import WhyChoose from '../components/sections/WhyChoose'
 import Footer from "../components/sections/Footer";
-import { Flex, Box, SimpleGrid } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const Home = () => {
-  return (
-    // <Flex direction="column" align="center" m="0 auto">
-    <>
-    
+  return (    
+    <>    
       <Header />
       <Box bgGradient="linear(to-r, blue.100, blue.500)">            
         <Introduction
@@ -26,7 +24,6 @@ const Home = () => {
       <Partners />
       <Footer />
       </>
-    // </Flex>
     
 
   )

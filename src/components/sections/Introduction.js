@@ -18,10 +18,10 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
             color={["white", "white", "primary.700", "primary.700"]}
             bgImage={BgAnimation}
             bgSize="cover"
-            bgPosition="center"           
+            bgPosition="center"
         >
             <Stack
-                spacing={4} w={["100%", "100%", "80%", "50%"]} py="150"
+                spacing={4} w={["100%", "100%", "100%", "50%"]} py="150"
             >
                 <Heading
                     as="h1"
@@ -36,17 +36,18 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                     fontSize="xl"
                     lineHeight={1.5}
                     textAlign="left"
-                    pr={{ base: "0", md: "20" }}
+                    pr={{ base: "0", lg: "10" }}
                     py="30"
                 >
                     {desc}
                 </Text>
-                
+
+                <Link to={ctaLink}> 
                 <Box
                     as="button"
-                    p="4"                    
+                    p="4"
                     mt="30"
-                    maxW="160"
+                    w={160}
                     color="white"
                     fontWeight="bold"
                     borderRadius="30"
@@ -54,9 +55,10 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                     _hover={{
                         bgGradient: "linear(to-r, red.500, yellow.500)",
                     }}
-                >                    
-                   <Link to={ctaLink}> {ctaText}</Link>
+                >
+                    {ctaText}
                 </Box>
+                </Link>
             </Stack>
             <Box w={["100%", "100%", "80%", "50%"]} mb="0" mt={["150", "150", "150", "0"]}>
                 <Center>

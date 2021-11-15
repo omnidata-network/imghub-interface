@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
-import { Box, Flex, Text, Stack, SimpleGrid, Heading, Image, HStack } from "@chakra-ui/react"
+import { Box, Flex, Text, Image } from "@chakra-ui/react"
 import LogoImgLight from "../../assets/logo-light.png"
 import LogoImgDark from "../../assets/logo-dark.png"
 import { debounce } from "../../utils/helpers";
@@ -13,7 +13,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
       mb={{ base: 8, sm: 0 }}
       mr={{ base: 0, sm: 8 }}
       display="block"
-      _hover={{ color: "orange.300" }}
+      _hover={{ color: "orange.500" }}
       {...rest}
     >
       <Link to={to}>{children}</Link>
@@ -91,7 +91,7 @@ const Header = (props) => {
         margin="0 auto"
       >
         <Box>
-          <Image src={visible ? LogoImgLight : LogoImgDark} maxH="40px" />
+          <Link to="/"><Image src={visible ? LogoImgLight : LogoImgDark} maxH="40px" /></Link>
         </Box>
         <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
           {show ? <CloseIcon /> : <MenuIcon />}
