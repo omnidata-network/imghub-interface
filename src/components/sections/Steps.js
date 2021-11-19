@@ -35,23 +35,23 @@ const Steps = () => {
                 >
                     <Box boxShadow="base" rounded="md" bg="white" textAlign="left" _hover={{ boxShadow: "2xl", cursor: "pointer" }}>
                         <Image src={Upload} size="100%" mb="5" />
-                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">1. Buy an Image</Text>
-                        <Text fontSize="md" my="5" mx="5" color="gray.500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">1. Upload an image to IPFS</Text>
+                        <Text fontSize="md" my="5" mx="5" color="gray.500">The image will be stored and indexed by a cryptographic hash function returning its unique content identifier (CID). </Text>
                     </Box>
                     <Box boxShadow="base" rounded="md" bg="white" textAlign="left" _hover={{ boxShadow: "2xl", cursor: "pointer" }}>
                         <Image src={Crop} size="100%" mb="5" />
-                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">2. Input your IPFS CID</Text>
-                        <Text fontSize="md" my="5" mx="5" color="gray.500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">2. Render</Text>
+                        <Text fontSize="md" my="5" mx="5" color="gray.500">Enter your CID, width and height of the image you want to display. Resize, crop, and enhance your images with simple URL parameters. </Text>
                     </Box>
                     <Box boxShadow="base" rounded="md" bg="white" textAlign="left" _hover={{ boxShadow: "2xl", cursor: "pointer" }}>
                         <Image src={Adjust} size="100%" mb="5" />
-                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">3. Adjust & preview</Text>
-                        <Text fontSize="md" my="5" mx="5" color="gray.500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">3. Optimize</Text>
+                        <Text fontSize="md" my="5" mx="5" color="gray.500">Intelligent, automated compression that eliminates unnecessary bytes. </Text>
                     </Box>
                     <Box boxShadow="base" rounded="md" bg="white" textAlign="left" _hover={{ boxShadow: "2xl", cursor: "pointer" }}>
                         <Image src={Save} size="100%" mb="5" />
-                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">4. Copy & save </Text>
-                        <Text fontSize="md" my="5" mx="5" color="gray.500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                        <Text fontSize="lg" fontWeight="bold" mx="5" color="gray.800">4. Deliver </Text>
+                        <Text fontSize="md" my="5" mx="5" color="gray.500">Customers see images fast thanks to our partners caching services. </Text>
                     </Box>
 
                 </SimpleGrid>

@@ -19,9 +19,10 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
             bgImage={BgAnimation}
             bgSize="cover"
             bgPosition="center"
+            py="120" 
         >
             <Stack
-                spacing={4} w={["100%", "100%", "100%", "50%"]} py="150"
+                spacing={4} w={["100%", "100%", "100%", "50%"]} 
             >
                 <Heading
                     as="h1"
@@ -42,7 +43,7 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                     {desc}
                 </Text>
 
-                <Link to={ctaLink}> 
+                
                 <Box
                     as="button"
                     p="4"
@@ -56,11 +57,11 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                         bgGradient: "linear(to-r, red.500, yellow.500)",
                     }}
                 >
-                    {ctaText}
+                   <Link to={ctaLink}> {ctaText}</Link>
                 </Box>
-                </Link>
+                
             </Stack>
-            <Box w={["100%", "100%", "80%", "50%"]} mb="0" mt={["150", "150", "150", "0"]}>
+            <Box w={["100%", "100%", "80%", "50%"]} mb={["150", "100", "150", "50"]} mt={["150", "50", "150", "50"]}>
                 <Center>
                     <Image src={image} size="100%" rounded="1rem" />
                 </Center>

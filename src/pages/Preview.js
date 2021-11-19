@@ -30,7 +30,7 @@ import RetrieveBackgroundImg from '../assets/bg-line.svg'
 const Preview = () => {
   const [imgUrl, setImgUrl] = useState('');
 
-  const [cid, setCid] = useState('bafybeigvwlkiqdvfpg3lcjmokhh6hn5dnugmcmhztbbspu74ufo64o56di');
+  const [cid, setCid] = useState('QmQpShzHDuR2Yyq15gg5JFuqRj9vFhvVmReRhxzqr5mukm');
   const [w, setW] = useState('');
   const [h, setH] = useState('');
   const imgAddress = React.createRef();
@@ -40,7 +40,7 @@ const Preview = () => {
   }
 
   useEffect(() => {
-    const url = new URL(`http://localhost:3000/ipfs/${cid}`);
+    const url = new URL(`https://api.img8.io/ipfs/${cid}`);
     let params = url.searchParams;
 
     if (h && h.trim().length > 0) {
@@ -51,7 +51,6 @@ const Preview = () => {
     }
 
     if (cid) {
-      console.log('The gateway access URL:', url.toString())
       setImgUrl(url);
     }
   }, [cid, w, h])
@@ -83,9 +82,9 @@ const Preview = () => {
           >
             Retrieve My Image
           </Heading>
-          <Text fontSize='md' my='5' color='white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+          <Text fontSize='md' my='5' color='white'>You can serve your images at the right dimensions and the best image format for each browser just by using the IPFS CID.</Text>
           <FormControl mt='10'>
-            <FormLabel color='white'>My IPFS CID:</FormLabel>
+            <FormLabel color='white'>IPFS CID:</FormLabel>
             <Input boxShadow='md' bg='transparent' color='white' value={cid} onChange={(event) => setCid(event.target.value)} />
           </FormControl>
           <HStack spacing='10' mt='5'>
@@ -111,7 +110,7 @@ const Preview = () => {
             </FormControl>
           </HStack>
           <FormControl mt='5'>
-            <FormLabel color='gray.500'>Image Address</FormLabel>
+            <FormLabel color='white'>Image URI</FormLabel>
             <InputGroup size='md'>
               <Input boxShadow='md' bg='transparent' color='white' ref={imgAddress} value={imgUrl} readOnly />
             </InputGroup>

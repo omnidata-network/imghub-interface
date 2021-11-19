@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
-import { Box, Flex, Text, Image } from "@chakra-ui/react"
+import { Link, NavLink } from "react-router-dom"
+import { Box, Flex, Text, Image, LinkBox, LinkOverlay } from "@chakra-ui/react"
 import LogoImgLight from "../../assets/logo-light.png"
 import LogoImgDark from "../../assets/logo-dark.png"
 import { debounce } from "../../utils/helpers";
@@ -90,8 +90,8 @@ const Header = (props) => {
         px={["10", "10", "20", "20"]}
         margin="0 auto"
       >
-        <Box>
-          <Link to="/"><Image src={visible ? LogoImgLight : LogoImgDark} maxH="40px" /></Link>
+        <Box fontWeight={'bold'} fontSize={'xl'}>
+          <Link to="/">Img8</Link>
         </Box>
         <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
           {show ? <CloseIcon /> : <MenuIcon />}
@@ -107,8 +107,8 @@ const Header = (props) => {
             pt={[4, 4, 0, 0]}
           >
             <MenuItem fontWeight="bold" to="/">Home</MenuItem>
-            <MenuItem fontWeight="bold" to="/preview">Preview </MenuItem>
-            <MenuItem fontWeight="bold" onClick={()=>window.location.href="https://docs.img8.io"}>Docs </MenuItem>
+            <MenuItem fontWeight="bold" to="/preview">Preview</MenuItem>
+            <MenuItem fontWeight="bold" onClick={() => window.open("https://docs.img8.io", '_blank')}>Docs</MenuItem>
           </Flex>
         </Box>
       </Flex>

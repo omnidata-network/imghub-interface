@@ -13,8 +13,8 @@ const Home = () => {
       <Header />
       <Box bgGradient="linear(to-r, blue.100, blue.500)">            
         <Introduction
-          title="Img8"
-          desc="Nowadays, more and more web3 applications are retrieving images from IPFS and Filecoin, but most of them do not need to show the original images, for example, the NFT marketplaces, Metaverse, and dApps just needed to show thumbnails or compressed and resized images to fit into the responsive UI elements, but there is not a easy and straightforward way to do this natively in the IPFS/Filecoin ecosystem."
+          title="Img8 Protocol"
+          desc="A decentralized image processing and optimization protocol built for decentralized storage like IPFS and Filecoin. It empowers web3 builders and designers to retrieve images easily. Cryptographically verified and decentralised storage design provides you with even faster-loaded speeds, incresed security, and high-resolution images."
           image={Banner}
           ctaText="Get Started"
           ctaLink="/preview"
