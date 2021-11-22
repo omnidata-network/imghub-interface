@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from "react-router-dom"
-import { Box, Flex, Text, Image, LinkBox, LinkOverlay } from "@chakra-ui/react"
-import LogoImgLight from "../../assets/logo-light.png"
-import LogoImgDark from "../../assets/logo-dark.png"
+import { Link } from "react-router-dom"
+import { Box, Flex, Text } from "@chakra-ui/react"
 import { debounce } from "../../utils/helpers";
 
 
