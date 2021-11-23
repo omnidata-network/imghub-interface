@@ -22,8 +22,7 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
             py="120" 
         >
             <Stack
-                spacing={4} w={["100%", "100%", "100%", "50%"]} 
-            >
+                spacing={4} w={["100%", "100%", "100%", "50%"]}>
                 <Heading
                     as="h1"
                     fontSize="4xl"
@@ -61,7 +60,7 @@ const Introduction = ({ title, desc, image, ctaLink, ctaText }) => {
                 </Box>
                 
             </Stack>
-            <Box w={["100%", "100%", "80%", "50%"]} mb={["150", "100", "150", "50"]} mt={["150", "50", "150", "50"]}>
+            <Box w={["100%", "100%", "80%", "50%"]} mt="50" mb="100">
                 <Center>
                     <Image src={image} size="100%" rounded="1rem" />
                 </Center>

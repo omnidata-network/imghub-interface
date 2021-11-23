@@ -25,7 +25,8 @@ const WhyChoose = () => {
                 <SimpleGrid
                     columns={{ sm: 1, md: 2, lg: 4 }}
                     spacing="8"
-                    p="10"
+                    py="10"
+                    px={{base:"0", "2xl":"20"}}
                     mt="50"
                     textAlign="center"
                     rounded="lg"
