@@ -23,6 +23,7 @@
     "dids": "1.1.1",
     "dot-prop": "^6.0.1",
     "ethers": "^5.1.4",
+    "file-saver": "^2.0.5",
     "framer-motion": "^4.1.9",
     "ipfs": "^0.54.4",
     "ipfs-css": "^1.3.0",

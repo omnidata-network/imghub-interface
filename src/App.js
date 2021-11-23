@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Home from './pages/Home';
+import Preview from './pages/Preview'
 import { CircularProgress, Center } from '@chakra-ui/react';
 import { Switch, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/preview" exact component={Preview} />
         </Switch>
       </div>
       )
