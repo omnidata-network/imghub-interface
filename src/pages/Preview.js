@@ -32,7 +32,7 @@ import PreviewImgBackground from '../assets/transparent-bg.png'
 
 const Preview = () => {
   const [imgUrl, setImgUrl] = useState('');
-  const [cid, setCid] = useState('QmQpShzHDuR2Yyq15gg5JFuqRj9vFhvVmReRhxzqr5mukm');
+  const [cid, setCid] = useState('QmRUheHMVX4qZ4UkWAmxrNREHDtTyP5GjctnDRzQTMKdxE');
   const [w, setW] = useState('500');
   const [h, setH] = useState('500');
   const imgAddress = React.createRef();
@@ -42,7 +42,14 @@ const Preview = () => {
   const [isAvatar, setIsAvatar] = useBoolean()
 
   useEffect(() => {
+<<<<<<< HEAD
     if (!cid) return
+=======
+    if (!cid) {
+      setImgUrl('')
+      return
+    }
+>>>>>>> 83f3d648d95b767223ec7b50eb48e47042097ef4
 
     const url = new URL(`https://api.img8.io/ipfs/${cid}`);
     let params = url.searchParams;
