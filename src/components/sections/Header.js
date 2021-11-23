@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
-import { Box, Flex, Text } from "@chakra-ui/react"
-import { debounce } from "../../utils/helpers";
+import { Link } from 'react-router-dom';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { debounce } from '../../utils/helpers';
 
 
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
   return (
     <Text
       mb={{ base: 8, sm: 0 }}
@@ -106,7 +106,18 @@ const Header = (props) => {
           >
             <MenuItem fontWeight="bold" to="/">Home</MenuItem>
             <MenuItem fontWeight="bold" to="/preview">Preview</MenuItem>
-            <MenuItem fontWeight="bold" onClick={() => window.open("https://docs.img8.io", '_blank')}>Docs</MenuItem>
+            <Box
+              as="a"
+              mb={{ base: 8, sm: 0 }}
+              mr={{ base: 0, sm: 8 }}
+              display="block"
+              _hover={{ color: "orange.500" }}
+              fontWeight="bold"
+              href={'https://docs.img8.io'}
+              target={'_blank'}
+            >
+              Docs
+            </Box>
           </Flex>
         </Box>
       </Flex>
