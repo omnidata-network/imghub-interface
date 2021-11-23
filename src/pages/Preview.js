@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Flex,
   Center,
@@ -19,7 +19,8 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
   HStack,
-  useBoolean
+  useBoolean,
+  Spinner
 } from '@chakra-ui/react';
 import { Checkbox } from "@chakra-ui/react"
 import Header from '../components/sections/Header';
@@ -39,18 +40,19 @@ const Preview = () => {
   const copy = async () => {
     await navigator.clipboard.writeText(imgAddress.current.value);
   }
-  const [isAvatar, setIsAvatar] = useBoolean()
+  const [isAvatar, setIsAvatar] = useBoolean();
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const imageOnLoad = useCallback(() => {
+    setImgLoaded(true);
+  }, [])
+
 
   useEffect(() => {
-<<<<<<< HEAD
-    if (!cid) return
-=======
     if (!cid) {
-      setImgUrl('')
+      setImgUrl('');
       return
     }
->>>>>>> 83f3d648d95b767223ec7b50eb48e47042097ef4
-
+    setImgLoaded(false);
     const url = new URL(`https://api.img8.io/ipfs/${cid}`);
     let params = url.searchParams;
 
@@ -67,6 +69,7 @@ const Preview = () => {
       params.set('t', 'avatar');
       params.delete('h');
     }
+    setImgLoaded(false);
   }, [cid, w, h, isAvatar])
 
 
@@ -148,8 +151,17 @@ const Preview = () => {
           <Box bgImage={PreviewImgBackground} bgSize='cover' display='flex' justify='center' boxShadow='md' p='5' rounded='md' w={`100%`} maxW='500' m='0 auto'>
             <Center m='0 auto' w='500'>
               {
-                cid && imgUrl && <Image src={imgUrl} justifySelf='center' />
+                cid && imgUrl && <Image
+                  onLoad={imageOnLoad}
+                  src={imgUrl} justifySelf='center' />
               }
+              {!imgLoaded && <Spinner
+                thickness="4px"
+                speed="0.65s"
+                emptyColor="gray.200"
+                color="blue.500"
+                size="xl"
+              />}
             </Center>
           </Box>
         </SimpleGrid>
