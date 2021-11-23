@@ -32,8 +32,8 @@ import PreviewImgBackground from '../assets/transparent-bg.png'
 const Preview = () => {
   const [imgUrl, setImgUrl] = useState('');
   const [cid, setCid] = useState('QmQpShzHDuR2Yyq15gg5JFuqRj9vFhvVmReRhxzqr5mukm');
-  const [w, setW] = useState('');
-  const [h, setH] = useState('');
+  const [w, setW] = useState('500');
+  const [h, setH] = useState('500');
   const [t, setAvatar] = useState('');
   const imgAddress = React.createRef();
   const copy = async () => {
@@ -61,6 +61,7 @@ const Preview = () => {
     }
     if (isAvatar && t && t.trim().length > 0) {
       params.set('t', t);
+      params.delete('h');
     }
   }, [cid, t, w, h, isAvatar])
 
@@ -124,7 +125,7 @@ const Preview = () => {
                 <Input boxShadow='md' bg='transparent' color='white' ref={imgAddress} value={imgUrl} readOnly />
               </InputGroup>
               <Box mt='5'>
-                <Checkbox variant='outline' bg='transparent' color='white' checked={isAvatar} onChange={handleCheckbox}>Avatar</Checkbox>
+                <Checkbox variant='outline' bg='transparent' color='white' value={isAvatar} checked={isAvatar} onChange={handleCheckbox}>Avatar</Checkbox>
               </Box>
               <ButtonGroup variant='outline' spacing='6' mt='10' width='70%'>
                 <Button borderRadius='30' p='6' w='50%' boxShadow='lg' borderColor='white' color='white'
