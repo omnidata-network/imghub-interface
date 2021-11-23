@@ -14,7 +14,7 @@ const Home = () => {
       <Box bgGradient="linear(to-r, blue.100, blue.500)">            
         <Introduction
           title="Img8 Protocol"
-          desc="A decentralized image processing and optimization protocol built for decentralized storage like IPFS and Filecoin. It empowers web3 builders and designers to retrieve images easily. Cryptographically verified and decentralised storage design provides you with even faster-loaded speeds, incresed security, and high-resolution images."
+          desc="A decentralized image processing and optimization protocol built for decentralized storage like IPFS and Filecoin. It empowers web3 builders and designers to retrieve images from decentralized storage networks easily with even faster-loaded speeds, incresed security, and high-resolution images."
           image={Banner}
           ctaText="Get Started"
           ctaLink="/preview"
