@@ -52,7 +52,6 @@ const Preview = () => {
       setImgUrl('');
       return
     }
-    setImgLoaded(false);
     const url = new URL(`https://api.img8.io/ipfs/${cid}`);
     let params = url.searchParams;
 
@@ -134,7 +133,7 @@ const Preview = () => {
               <Box mt='5'>
                 <Checkbox variant='outline' bg='transparent' color='white' value={isAvatar} checked={isAvatar} onChange={setIsAvatar.toggle}>Avatar</Checkbox>
               </Box>
-              <ButtonGroup variant='outline' spacing='6' mt='10' width='70%'>
+              <ButtonGroup variant='outline' spacing='6' mt='10' width="100%">
                 <Button borderRadius='30' p='6' w='50%' boxShadow='lg' borderColor='white' color='white'
                   _hover={{
                     bg: 'transparent', borderColor: 'blue.500', color: 'blue.500'

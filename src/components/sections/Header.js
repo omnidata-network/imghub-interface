@@ -102,14 +102,15 @@ const Header = (props) => {
             align="center"
             justify={["center", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
-            pt={[4, 4, 0, 0]}
+            pt="10"
           >
-            <MenuItem fontWeight="bold" to="/">Home</MenuItem>
-            <MenuItem fontWeight="bold" to="/preview">Preview</MenuItem>
+            <MenuItem fontWeight="bold" to="/" w="100%">Home</MenuItem>
+            <MenuItem fontWeight="bold" to="/preview" w="100%">Preview</MenuItem>
             <Box
               as="a"
               mb={{ base: 8, sm: 0 }}
               mr={{ base: 0, sm: 8 }}
+              w="100%"
               display="block"
               _hover={{ color: "orange.500" }}
               fontWeight="bold"
