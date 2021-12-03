@@ -102,7 +102,7 @@ const Header = (props) => {
             align="center"
             justify={["center", "flex-end", "flex-end"]}
             direction={["column", "row", "row", "row"]}
-            pt="10"
+            pt={show ? "8" : "0"}
           >
             <MenuItem fontWeight="bold" to="/" w="100%">Home</MenuItem>
             <MenuItem fontWeight="bold" to="/preview" w="100%">Preview</MenuItem>
