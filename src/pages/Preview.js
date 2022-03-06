@@ -41,6 +41,8 @@ const Preview = () => {
     await navigator.clipboard.writeText(imgAddress.current.value);
   }
   const [isAvatar, setIsAvatar] = useBoolean();
+  const [isFlip, setIsFlip] = useBoolean();
+  const [isFlop, setIsFlop] = useBoolean();
   const [imgLoaded, setImgLoaded] = useState(false);
   const imageOnLoad = useCallback(() => {
     setImgLoaded(true);
@@ -52,7 +54,7 @@ const Preview = () => {
       setImgUrl('');
       return
     }
-    const url = new URL(`https://api.img8.io/ipfs/${cid}`);
+    const url = new URL(`https://gateway.img8.io/ipfs/${cid}`);
     let params = url.searchParams;
 
     if (h && h.trim().length > 0) {
@@ -61,15 +63,23 @@ const Preview = () => {
     if (w && w.trim().length > 0) {
       params.set('w', w);
     }
+    if (isFlip) {
+      params.set('flip', 'true');
+    }
+    if (isFlop) {
+      params.set('flop', 'true');
+    }
     if (cid) {
       setImgUrl(url);
     }
     if (isAvatar) {
       params.set('t', 'avatar');
       params.delete('h');
+      params.delete('flip');
+      params.delete('flop');
     }
     setImgLoaded(false);
-  }, [cid, w, h, isAvatar])
+  }, [cid, w, h, isFlip, isFlop, isAvatar])
 
 
   return (
@@ -132,13 +142,15 @@ const Preview = () => {
               </InputGroup>
               <Box mt='5'>
                 <Checkbox variant='outline' bg='transparent' color='white' value={isAvatar} checked={isAvatar} onChange={setIsAvatar.toggle}>Avatar</Checkbox>
+                <Checkbox pl={3} variant='outline' bg='transparent' color='white' value={isFlip} checked={isFlip} onChange={setIsFlip.toggle}>Flip</Checkbox>
+                <Checkbox pl={3} variant='outline' bg='transparent' color='white' value={isFlop} checked={isFlop} onChange={setIsFlop.toggle}>Flop</Checkbox>
               </Box>
               <ButtonGroup variant='outline' spacing='6' mt='10' width="100%">
                 <Button borderRadius='30' p='6' w='50%' boxShadow='lg' borderColor='white' color='white'
                   _hover={{
                     bg: 'transparent', borderColor: 'blue.500', color: 'blue.500'
                   }}
-                  _active={{ bg: 'transparent', color: 'white' }} _focus={{ boxShadow: 'lg' }} onClick={copy}>Copy ink</Button>
+                  _active={{ bg: 'transparent', color: 'white' }} _focus={{ boxShadow: 'lg' }} onClick={copy}>Copy link</Button>
                 <Button borderRadius='30' p='6' w='50%' boxShadow='lg' borderColor='white' color='white'
                   _hover={{
                     bg: 'transparent', borderColor: 'blue.500', color: 'blue.500'

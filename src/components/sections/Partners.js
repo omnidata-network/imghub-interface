@@ -1,4 +1,4 @@
-import { Flex, Stack, Box, Center, Image, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Stack, Box, Center, Image, SimpleGrid, Link } from "@chakra-ui/react";
 import Partner1 from "../../assets/partner-1.png";
 import Partner2 from "../../assets/partner-2.png";
 import Partner3 from "../../assets/partner-3.png";
@@ -24,17 +24,23 @@ const Partners = () => {
       >
         <Box w="100%" mb={["10", "10", "30", "0"]} >
           <Center>
-            <Image src={Partner1} boxSize="70%" />
+            <Link isExternal={true} href="https://ipfs.io">
+              <Image src={Partner1} boxSize="70%" />
+            </Link>
           </Center>
         </Box>
         <Box w="100%" mb={["10", "10", "30", "0"]}>
           <Center>
-            <Image src={Partner2} boxSize="70%" />
+            <Link isExternal={true} href="https://filecoin.io/">
+              <Image src={Partner2} boxSize="70%" />
+            </Link>
           </Center>
         </Box>
         <Box w="100%" mb={["0", "0", "30", "0"]}>
           <Center>
-          <Image src={Partner3} boxSize="70%" />
+            <Link isExternal={true} href="https://myavatar.link/">
+              <Image src={Partner3} boxSize="70%" />
+            </Link>
           </Center>
         </Box>
       </SimpleGrid>
