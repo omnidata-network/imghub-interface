@@ -1,5 +1,7 @@
 {
-  "name": "img8-interface",
+  "name": "imghub-interface",
+  "description": "Omnidata protocol - imghub interface",
+  "author": "Meta Foundation Ltd.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

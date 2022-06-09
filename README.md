@@ -1,4 +1,7 @@
-# Img8 Preview App
+# Omnidata imghub Preview App
+
+This repo was migrated from [Img8 protocol](https://github.com/img8io/img8-interface)
+
 
 ## To Run Locally
 
