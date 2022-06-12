@@ -13,7 +13,7 @@ const Home = () => {
       <Header />
       <Box bgGradient="linear(to-r, blue.100, blue.500)">            
         <Introduction
-          title="Img8 Protocol"
+          title="The IMGHUB of Omnidata gateway"
           desc="A decentralized image processing and optimization protocol built for web3 builders and creators to easily retrieve responsive, resized, and optimized photos from decentralized storage networks with faster-loaded speeds."
           image={Banner}
           ctaText="Get Started"

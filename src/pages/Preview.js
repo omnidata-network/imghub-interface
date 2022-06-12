@@ -54,7 +54,7 @@ const Preview = () => {
       setImgUrl('');
       return
     }
-    const url = new URL(`https://gateway.img8.io/ipfs/${cid}`);
+    const url = new URL(`https://gateway.omnidata.xyz/ipfs/${cid}`);
     let params = url.searchParams;
 
     if (h && h.trim().length > 0) {

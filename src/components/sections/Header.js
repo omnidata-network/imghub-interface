@@ -89,7 +89,7 @@ const Header = (props) => {
         margin="0 auto"
       >
         <Box fontWeight={'bold'} fontSize={'xl'}>
-          <Link to="/">Img8</Link>
+          <Link to="/">Imghub</Link>
         </Box>
         <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
           {show ? <CloseIcon /> : <MenuIcon />}
@@ -114,7 +114,7 @@ const Header = (props) => {
               display="block"
               _hover={{ color: "orange.500" }}
               fontWeight="bold"
-              href={'https://docs.img8.io'}
+              href={'https://docs.omnidata.xyz'}
               target={'_blank'}
             >
               Docs
